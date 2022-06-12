@@ -1,0 +1,23 @@
+# LOCAL PATHNAME INFORMATION
+maillog_file = /var/log/postfix.log
+
+
+# HOST $ NETWORKS PARAMETERS
+myhostname = smtp.almetplus.ru
+mydomain = almetplus.ru
+myorigin = $mydomain
+mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
+inet_interfaces = all
+inet_protocols = all
+
+
+# LOCAL MAILBOX PARAMETERS
+home_mailbox = Inbox/
+mailbox_size_limit = 51200000
+recipient_delimiter = +
+
+# OPENDKIM PARAMETERS
+milter_default_action = accept
+milter_protocol = 2
+smtpd_milters = inet:127.0.0.1:8891
+non_smtpd_milters = inet:127.0.0.1:8891
